@@ -9,3 +9,6 @@ class BaseController(webapp.RequestHandler):
 	def path_for_template( self, view):
 		path = os.path.join(os.path.dirname(__file__), 'views/' + view)
 		return(path)
+
+	def param(self, param):
+		return cgi.escape(self.request.get(param))
